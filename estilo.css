@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  color:#fff;
+  -webkit-box-sizing: border-box;
+  
+}
+
+body {
+  min-height: 100%;
+}
+
+.footer{
+  background-color: #252422;
+  grid-area: footer;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header{
+  background-color: #252422;
+  grid-area: header;
+}
+
+html{
+  background-color: #EB5E28;
+  height: 100%;
+}
+
+.main{
+  background-color: #403D39;
+  grid-area: main;
+}
+
+.navbar{
+  background-color: #403D39;
+  grid-area: navbar;
+}
+
+.sidebar{
+  background-color: #403D39;
+  grid-area: sidebar;
+}
+
+/*En este grid-container esta la version para movil*/
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+  "header" auto
+  "navbar" auto
+  "main" auto
+  "sidebar" auto
+  "footer" 100px;
+}
+
+/* Este @media es para las pantallas de tablet. 
+Tienes 2 formas de hacerlo: 
+1º como esta comentado en las lineas de abajo.
+2º Usando el grid-template.*/
+@media (min-width: 600px) {
+  .grid-container{
+    /*grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;*/
+    /*grid-template-areas:
+    "header header"
+    "navbar navbar"
+    "sidebar main"
+    "footer footer";*/
+
+    grid-template:
+    "header header" auto
+    "navbar navbar" auto
+    "sidebar main" auto
+    "footer footer" 100px /
+   200px   auto;
+  }
+}
+
+/*Este @media es para las pantallas de escritorio*/
+@media (min-width: 900px) {
+  .grid-container{
+    grid-template:
+    "header header header"   155px
+    "navbar main   sidebar"  auto
+    "footer footer footer"   100px /
+   200px   auto    200px;
+  }
+}
+
+/* A partir de aqui son pruebas */
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position: absolute;
+}
+
+/*Crea la lista horizontal con espacio*/
+li {
+	display:inline-block;
+	margin-right: 1px;
+}
+
+/* Estilos para los link */
+li a {
+  background: #2f3036;
+  color: #fff;
+  display:block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 50px;
+  line-height: 50px;
+	min-width:140px;
+	text-align: center;
+	text-decoration: none;
+  transition:all 0.5s ease;
+}
+
+li:hover a {
+	background: #19c589;
+}
+
+li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+}
+
+li:hover ul a:hover {
+	background: #19c589;
+	color: #fff;
+}
+
+li ul {
+	display: none;
+}
+
+li ul li {
+	display: block;
+	float: none;
+}
+
+li ul li a {
+  min-width: 100px;
+	padding: 0 20px;
+	width: auto;
+}
+
+.show-menu {
+  background: #19c589;
+  color: #fff;
+  display: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 10px 0;
+	text-decoration: none;
+	text-align: center;
+  transition:all 0.5s ease;
+}
+
+ul li a:hover {
+	display: block;
+}
+
+/*Oculta el checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/* muestra el menu cuando el checkbox esta activo*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+/* estilos responsive */
+@media screen and (max-width : 1039px){
+	/*Hace que el menu aparesca en linea */
+	ul {
+    display: none;
+		position: relative;
+	}
+	/*Crea espacio vertical */
+	li {
+		margin-bottom: 1px;
+	}
+	/* crea todo el menu */
+	ul li, li a {
+		width: 100%;
+	}
+	/*Display  link*/
+	.show-menu {
+		display:block;
+	}
+}
+
+iframe{
+  border-width: 0px;
+}
+
+img{
+  height: 150px;
+  width: 225px;
+}
+
+/*Aqui esta el estilo de la tabla*/
+.tabla{
+  width: 100%;
+}
+
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+/*Aqui tienes el estilo del formulario de contacto*/
+.btn-sumit{
+  background:#EB5E28;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.contenedor-form, .form, .form-label{
+  display: block;
+}
+
+.form-input, .form-textarea {
+  background: rgba(42, 42, 42, 0.787);
+  
+}
+
+.contenedor-form, .form, .form-textarea{
+  resize:vertical;
+}
+
+.form-label, .form, .form-textarea{
+font-size: 16px;
+}
